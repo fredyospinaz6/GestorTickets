@@ -1,0 +1,6 @@
+.contenedor-login{
+    background-color: rgb(249, 249, 250);
+    box-sizing: border-box;
+    border-radius: 5%;
+    padding: 60px 40px;
+}

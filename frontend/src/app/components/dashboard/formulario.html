@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CREACION DE TICKETS</title>
+  </head>
+  <!-- <link rel="stylesheet" href="css/estilo3.css"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <body>
+    <header>
+      <div class="container_header">
+        <div class="logo">
+          <img src="img/avatar.jpg" alt="logo">
+      
+        </div>
+    </header>
+    <form class="" action="index.html" method="post">
+      <h2>NUEVA SOLICITUD</h2>
+      <h4>Completa el siguiente formulario para crear un nuevo ticket</h4>
+      <label for="tipo">Tipo</label><br>
+      <select name="tipo" id="tipo">
+        <option value="">--Selecione--</option>
+        <option value="incidencia">Incidencia</option>
+        <option value="requerimiento">Requerimiento</option>
+      </select>
+      <br>
+      <!--<input type="text" name="destino" value="" placeholder="Ingrese area">-->
+      <label for="prioridad">Prioridad</label><br>
+      <select name="prioridad" id="prioridad">
+        <option value="">--Seleccione--</option>
+        <option value="muy urgente">Muy Urgente</option>
+        <option value="alta">Alta</option>
+        <option value="mediana">Mediana</option>
+        <option value="baja">Baja</option>
+        <option value="muy baja">Muy Baja</option>
+      </select>
+      <br>
+      <label for="categoria">Categoria</label><br>
+      <select name="categoria" id="categoria">
+        <option value="">--Seleccione--</option>
+        <option value="impresoras">Impresoras</option>
+        <option value="computadores">Computadores</option>
+        <option value="redes">Redes</option>
+        <option value="creacion usuario">Creacion Usuario</option>
+      </select>
+      <br>
+      <!--<input type="text" name="prioridad" value="" placeholder="Ingrese prioridad">-->
+      <label for="resumen">Titulo</label>
+      <input type="text" name="titulo" value="" placeholder="Titulo">
+      <label for="detalle">Detalle del ticket</label><br>
+      <textarea name="detalle" placeholder="Describa el motivo de su solicitud"></textarea>
+      <input type="submit" name="register" value="Enviar" id="boton">
+    </form>
+  </body>
+</html>

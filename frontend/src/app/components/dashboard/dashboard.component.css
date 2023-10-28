@@ -1,0 +1,323 @@
+*
+/* Estilo Index  */
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  /*HEADER*/
+  header {
+    width: 100%;
+    height: 130px;
+    font-family: 'Comfortaa', cursive;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(7, 171, 242, 0.88);
+    font-weight: 600;
+  }
+  
+  .container_header {
+    max-width: 1600px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0px 20px;
+  }
+  
+  header .logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 110px;
+  }
+  
+  .container_nav {
+    position: relative;
+    height: 100%;
+  }
+  
+  nav {
+    height: 100%;
+  }
+  
+  nav ul {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 0px 20px;
+    list-style: none;
+  }
+  
+  nav ul li a {
+    color: white;
+    font-size: 14px;
+  }
+  
+  /*COVER*/
+  .cover {
+    width: 100%;
+    padding-bottom: 80px;
+    font-family: 'Comfortaa', cursive;
+    margin-top: 100px;
+  }
+  
+  .container_cover {
+    max-width: 1600px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .cover .container_info1 {
+    max-width: 400px;
+    margin-top: 40px;
+    /*z-index: 2;*/
+  }
+  
+  .cover h1 {
+    max-width: 400px;
+    font-size: 30px;
+    font-weight: 900;
+    color: blue;
+  }
+  
+  .cover p {
+    margin-top: 10px;
+    color: rgb(9, 9, 9);
+    font-size: 20px;
+    text-align: justify;
+  }
+  
+  /*BOTON*/
+  .crearInput[type="button"] {
+    padding: 10px 20px;
+    margin-top: 40px;
+    font-size: 10px;
+    font-weight: 600;
+    border: none;
+    color: white;
+    background: #0736e1;
+    border-radius: 20px;
+    box-shadow: 1px 1px 30px -5px #6a6666;
+    cursor: pointer;
+    transition: box-shadow 500ms;
+  }
+  
+  /*.estadoInput[type="button"] {
+    padding: 10px 20px;
+    margin-top: 40px;
+    font-size: 10px;
+    font-weight: 600;
+    border: none;
+    color: greenyellow;
+    background: red;
+    border-radius: 20px;
+    box-shadow: 1px 1px 30px -5px #6a6666;
+    cursor: pointer;
+    transition: box-shadow 500ms;
+  }*/
+  
+  .cover input[type="button"]:hover {
+    box-shadow: 1px 1px 30px -5px;
+  }
+  
+  .container_vector {
+    position: relative;
+    padding: 80px;
+  }
+  
+  .container_vector img {border-radius: 50%;
+    position: absolute;
+    right: 100px;
+    width: 300px;
+  }
+  
+  .container_info2 {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: auto;
+    padding: 10px;
+    font-family: 'Comfortaa', cursive;
+    background: rgb(229, 251, 166);
+  }
+  
+  .container_info2 .crear h1 {
+    max-width: 400px;
+    font-size: 20px;
+    font-weight: 900;
+    color: blue;
+  }
+  
+  .container_info2 .estado h1 {
+    max-width: 400px;
+    font-size: 20px;
+    font-weight: 900;
+    color: blue;
+  }
+  
+  .container_info2 .crear p {
+    margin-top: 10px;
+    color: black;
+    font-size: 15px;
+    text-align: justify;
+  }
+  
+  .container_info2 .estado p {
+    margin-top: 10px;
+    color: black;
+    font-size: 15px;
+    text-align: justify;
+  }
+  
+  /*VENTANA EMERGENTE*/
+  .overlay {
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    visibility: hidden;
+  }
+  
+  .overlay.active {
+    visibility: visible;
+  }
+  
+  form {
+    text-align: left;
+  }
+  
+  .popup {
+    background: white;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    font-family: 'Comfortaa', cursive;
+    padding: 20px;
+    text-align: center;
+    width: 650px;
+    transition: .3s ease all;
+    transform: scale(0.7);
+  }
+  
+  .popup .btn-cerrar-popup {
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: green;
+    transition: .3s ease all;
+  }
+  
+  .popup .btn-cerrar-popup:hover {
+    color: black;
+  }
+  
+  .popup h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    /*opacity: 0;*/
+  }
+  
+  .popup h4 {
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    /*opacity: 0;*/
+  }
+  
+  form input[type="submit"] {
+    width: 100%;
+    padding: 8px 16px;
+    margin-top: 32px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: block;
+    color: #fff;
+    background-color:#000;
+    background-color: #00A817;
+  }
+  
+  form input[type="submit"]:hover {
+    cursor: pointer;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #c4e3f1;
+    border-radius: 3px;
+    background-color: #c4e3f1;
+    margin: 8px 0;
+    resize: none;
+    display: block;
+  }
+  
+  form label {
+    width: 72px;
+    font-weight: bold;
+    /*display: inline-grid;*/
+  }
+  
+  .destino, .prioridad, form input[type="text"] {
+    width: 180px;
+    padding: 3px 10px;
+    border: 1px solid #c4e3f1;
+    border-radius: 3px;
+    background-color: #c4e3f1;
+    margin: 8px 0;
+    display: inline-block;
+  }
+  
+  form input[type="text"] {
+    width: 100%;
+  }
+  
+  .ok {
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    background-color: #1e6;
+    color: #fff
+  }
+  
+  .bad {
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    background-color: #a22;
+  }
+  .container_footer {
+    background: rgba(7, 171, 242, 0.88);
+    }
+  .container_footer p{
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    height: 200px;
+    font-family: 'Comfortaa', cursive;
+  }
+  
+  
