@@ -40,8 +40,8 @@ class Server {
 
     async dbConnect() {
         try {
-            await Ticket.sync()
-            await User.sync();
+            await Ticket.sync({ force: true });
+            await User.sync({ force: true});
         } catch (error) {
             console.error('Unable to connect to the database:', error);
         }
