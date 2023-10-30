@@ -36,6 +36,14 @@ export const Ticket = sequelize.define('tickets', {
             key: 'id',
           },
     },
+    tecnicoId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'users',
+            key: 'id',
+          },
+    },
     type: {
         type: DataTypes.STRING,
         allowNull: false

@@ -31,4 +31,5 @@ export const User = sequelize.define('users', {
     },
 });
 
-User.hasMany(Ticket, { foreignKey: 'userId' }); // Define la relación uno a muchos
+User.hasMany(Ticket, { as: 'ticketsCreados', foreignKey: 'userId' });
+User.hasMany(Ticket, { as: 'ticketsAsignados', foreignKey: 'tecnicoId' }); // Define la relación uno a muchos
