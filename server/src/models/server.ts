@@ -3,7 +3,7 @@ import cors from 'cors';
 import routesProduct from '../routes/ticket';
 import routesUser from '../routes/user';
 import {Ticket } from './ticket.model';
-import { User } from './user';
+import { User } from './user.model';
 
 class Server {
     private app: Application;

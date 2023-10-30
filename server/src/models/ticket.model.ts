@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../db/connection';
 
-export const Ticket = sequelize.define('ticket', {
+export const Ticket = sequelize.define('tickets', {
     id: {
         allowNull: false,
         autoIncrement: true,
@@ -32,7 +32,7 @@ export const Ticket = sequelize.define('ticket', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'user',
+            model: 'users',
             key: 'id',
           },
     },
