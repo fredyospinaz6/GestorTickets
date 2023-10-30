@@ -4,11 +4,12 @@ import { Ticket } from './ticket.model';
 
 export const User = sequelize.define('users', {
     id: {
-        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
-        autoIncrement: true
-    },
-    username: {
+        type: DataTypes.INTEGER
+      },
+      username: {
         type: DataTypes.STRING,
         unique: true,
         allowNull: false
