@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../db/connection';
+import { Ticket } from './ticket.model';
 
 export const User = sequelize.define('user', {
     id: {
@@ -15,5 +16,19 @@ export const User = sequelize.define('user', {
     password: {
         type: DataTypes.STRING,
         allowNull: false
-    }
-}, )
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    lastname: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    role: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+});
+
+User.hasMany(Ticket, { foreignKey: 'userId' }); // Define la relación uno a muchos
