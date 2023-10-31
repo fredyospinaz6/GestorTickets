@@ -1,9 +1,23 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Ticket } from '../interfaces/ticket';
 
 @Injectable({
     providedIn: 'root'
 })
-export class TicketService {
 
-    constructor() { }
-}
+export class TicketService {
+    private myAppUrl: string;
+    private myApiUrl: string;
+  
+    constructor(private http: HttpClient) {
+      this.myAppUrl = environment.endpoint;
+      this.myApiUrl = 'api/ticket'
+     }
+  
+     generarTicket(Ticket: Ticket): Observable<any> {
+      return this.http.post(`${this.myAppUrl}${this.myApiUrl}`, Ticket);
+     }
+    }

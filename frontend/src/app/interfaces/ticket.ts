@@ -4,4 +4,5 @@ export interface Ticket {
     categoria: string;
     titulo: string ;
     detalle: string;
+    fecha: string;
 }

@@ -40,7 +40,7 @@ export class LoginAdminComponent implements OnInit {
     }
     
     if(this.username =='admin' && this.password == 'admin123' ){
-      this.router.navigate(['/signIn']);
+      this.router.navigate(['/dashboard-admin']);
     }
   }
 

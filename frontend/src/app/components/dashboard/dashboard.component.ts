@@ -30,5 +30,10 @@ export class DashboardComponent implements OnInit {
      this.router.navigate(['/crearticket']);
   }
 
+  consultarTicket(): void {
+
+    this.router.navigate(['/consultartickets'])
+  }
+
 
 }

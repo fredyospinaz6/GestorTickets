@@ -10,12 +10,14 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { AuthGuard } from './utils/auth.guard';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'login-admin', component: LoginAdminComponent },
+  { path: 'dashboard-admin', component: DashboardAdminComponent },
   { path: 'signIn', component: SignInComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'crearticket', component: FormularioComponent },

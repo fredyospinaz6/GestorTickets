@@ -20,6 +20,7 @@ import { AddTokenInterceptor } from './utils/add-token.interceptor';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { ConsultaComponent } from './components/consulta/consulta.component';
+import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ConsultaComponent } from './components/consulta/consulta.component';
     SpinnerComponent,
     LoginAdminComponent,
     FormularioComponent,
-    ConsultaComponent
+    ConsultaComponent,
+    DashboardAdminComponent
   ],
   imports: [
     BrowserModule,
