@@ -26,7 +26,7 @@ class Server {
     }
 
     routes() {
-        this.app.use('/api/products', routesProduct);
+        this.app.use('/api/tickets', routesProduct);
         this.app.use('/api/users', routesUser);
     }
 
@@ -40,8 +40,8 @@ class Server {
 
     async dbConnect() {
         try {
-            await Ticket.sync({ force: true });
-            await User.sync({ force: true});
+            await User.sync();
+            await Ticket.sync();
         } catch (error) {
             console.error('Unable to connect to the database:', error);
         }

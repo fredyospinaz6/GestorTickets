@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const product_1 = require("../controllers/product");
+const ticket_controller_1 = require("../controllers/ticket.controller");
 const validate_token_1 = __importDefault(require("./validate-token"));
 const router = (0, express_1.Router)();
-router.get('/', validate_token_1.default, product_1.getProducts);
+router.get('/', validate_token_1.default, ticket_controller_1.getTickets);
 exports.default = router;

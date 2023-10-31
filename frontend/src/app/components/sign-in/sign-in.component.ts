@@ -14,6 +14,9 @@ import { UserService } from 'src/app/services/user.service';
 export class SignInComponent implements OnInit {
   username: string = '';
   password: string = '';
+  name: string = '';
+  lastname: string = '';
+  role: string = '';
   confirmPassword: string = '';
   loading: boolean = false;
 
@@ -42,7 +45,11 @@ export class SignInComponent implements OnInit {
     // Creamos el objeto
     const user: User = {
       username: this.username,
-      password: this.password
+      password: this.password,
+      name: this.name,
+      lastname: this.lastname,
+      role: this.role,
+
     }
 
     this.loading = true;

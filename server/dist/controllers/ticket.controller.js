@@ -9,10 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getProducts = void 0;
-const product_1 = require("../models/product");
-const getProducts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const listProducts = yield product_1.Product.findAll();
-    res.json(listProducts);
+exports.getTickets = void 0;
+const ticket_model_1 = require("../models/ticket.model");
+const getTickets = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const listTickets = yield ticket_model_1.Ticket.findAll();
+    res.json(listTickets);
 });
-exports.getProducts = getProducts;
+exports.getTickets = getTickets;
