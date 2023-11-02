@@ -18,7 +18,7 @@
       <h2>NUEVA SOLICITUD</h2>
       <h4>Completa el siguiente formulario para crear un nuevo ticket</h4>
       <label for="tipo">Tipo</label><br>
-      <select [(ngModel)]="tipo" name="tipo" id="tipo">
+      <select [(ngModel)]="type" name="tipo" id="tipo">
         <option value="">--Selecione--</option>
         <option value="incidencia">Incidencia</option>
         <option value="requerimiento">Requerimiento</option>
@@ -26,7 +26,7 @@
       <br>
       <!--<input type="text" name="destino" value="" placeholder="Ingrese area">-->
       <label for="prioridad">Prioridad</label><br>
-      <select [(ngModel)]="prioridad" name="prioridad" id="prioridad">
+      <select [(ngModel)]="priority" name="prioridad" id="prioridad">
         <option value="">--Seleccione--</option>
         <option value="muy urgente">Muy Urgente</option>
         <option value="alta">Alta</option>
@@ -36,7 +36,7 @@
       </select>
       <br>
       <label for="categoria">Categoria</label><br>
-      <select [(ngModel)]="categoria" name="categoria" id="categoria">
+      <select [(ngModel)]="category" name="categoria" id="categoria">
         <option value="">--Seleccione--</option>
         <option value="impresoras">Impresoras</option>
         <option value="computadores">Computadores</option>
@@ -46,10 +46,10 @@
       <br>
       <!--<input type="text" name="prioridad" value="" placeholder="Ingrese prioridad">-->
       <label for="resumen">Titulo</label>
-      <input [(ngModel)]="titulo" type="text" name="titulo" value="" placeholder="Titulo">
+      <input [(ngModel)]="title" type="text" name="titulo" value="" placeholder="Titulo">
       <label for="detalle">Detalle del ticket</label><br>
-      <textarea [(ngModel)]="detalle" name="detalle" placeholder="Describa el motivo de su solicitud"></textarea>
-      <input [(ngModel)]="fecha" type="text" name="fecha" value="" placeholder="fecha">
+      <textarea [(ngModel)]="description" name="detalle" placeholder="Describa el motivo de su solicitud"></textarea>
+      <input [(ngModel)]="date" type="text" name="fecha" value="" placeholder="fecha">
       <input type="submit" name="register" value="Enviar" id="boton" (click)="enviar()">
       <!-- <input type="submit" name="volver" value="volver" id="boton" (click)="volver()"> -->
       <input type="submit" name="volver" value="volver" id="boton" routerLink="/dashboard">

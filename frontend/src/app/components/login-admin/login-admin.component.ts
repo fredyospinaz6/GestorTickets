@@ -2,9 +2,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { User } from 'src/app/interfaces/user';
+import { userAdmin } from 'src/app/interfaces/userAdmin';
 import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-login-admin',
@@ -14,6 +15,9 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginAdminComponent implements OnInit {
   username: string ='';
   password: string ='';
+ /* name: string = '';
+  lastname: string = '';
+  role: string = '';*/
   loading: boolean = false;
 
 
@@ -33,8 +37,8 @@ export class LoginAdminComponent implements OnInit {
       return
     }
 
-      // Creamos el body
-    const user: User = {
+      // Creamos el body  || Se pone userAdmin en const para evitar duplicidad con login
+    const userAdmin: userAdmin = {
       username: this.username,
       password: this.password
     }

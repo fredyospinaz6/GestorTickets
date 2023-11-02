@@ -14,6 +14,10 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
+  name: string = '';
+  lastname: string = '';
+  role: string = '';
+
   loading: boolean = false;
 
   constructor(private toastr: ToastrService,
@@ -26,8 +30,8 @@ export class LoginComponent implements OnInit {
 
   login() {
 
-    // Validamos que el usuario ingrese datos
-    if (this.username == '' || this.password == '') {
+    // Validamos que el usuario ingrese datos // 
+    if (this.username == '' || this.password == '' ) {
       this.toastr.error('Todos los campos son obligatorios', 'Error');
       return
     }
@@ -35,7 +39,10 @@ export class LoginComponent implements OnInit {
     // Creamos el usuario
     const user: User = {
       username: this.username,
-      password: this.password
+      password: this.password,
+      name: this.name,
+      lastname: this.lastname,
+      role: this.role
     }
 
     this.loading = true;
@@ -51,6 +58,5 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  
 
 }

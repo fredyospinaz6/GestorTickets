@@ -17,7 +17,7 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
 const user_model_1 = require("../models/user.model");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const newUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { username, password } = req.body;
+    const { username, password, name, lastname, role } = req.body; //
     // Validamos si el usuario ya existe en la base de datos
     const user = yield user_model_1.User.findOne({ where: { username: username } });
     if (user) {
@@ -30,7 +30,10 @@ const newUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         // Guardarmos usuario en la base de datos
         yield user_model_1.User.create({
             username: username,
-            password: hashedPassword
+            password: hashedPassword,
+            name: name,
+            lastname: lastname,
+            role: role
         });
         res.json({
             msg: `Usuario ${username} creado exitosamente!`

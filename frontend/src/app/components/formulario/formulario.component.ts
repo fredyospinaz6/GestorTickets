@@ -13,13 +13,20 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class FormularioComponent implements OnInit {
 
-    tipo: string = '';
-    prioridad: string = '';
-    categoria: string = '';
-    titulo: string = '';
-    detalle: string = '';
-    fecha: string = '';
     loading: boolean = false;
+
+  //  id: string = '';
+    title: string = '';
+    description: string = '';
+    priority: string = '';
+    status: string = '';
+    date: string = '';
+    userId: string = '';
+    tecnicoId: string = '';
+    type: string = '';
+    category: string = '';
+    //createdAt: string = '';
+    //updatedAt: string = '';
 
     constructor(
         private toastr: ToastrService,
@@ -33,24 +40,33 @@ export class FormularioComponent implements OnInit {
 
     enviar(): void {
         // Validamos campos llenos
-        if (this.tipo == '' || this.prioridad == '' || this.categoria == '' || this.titulo == '' || this.detalle == '' || this.fecha == '') {
+        /*if ( this.title == '' || this.description == '' || this.priority == '' || this.status == ''
+        || this.date == '' || this.userId == '' || this.tecnicoId == '' || this.type == '' || this.category == ''
+         || this.createdAt == '' || this.updatedA == '') {
             this.toastr.error('Todos los campos son obligatorios', 'Error');
             return;
-        }
+
+        }*/
         // Creamos el Ticket
         const datosTicket: Ticket = {
-            tipo: this.tipo,
-            categoria: this.categoria,
-            detalle: this.detalle,
-            prioridad: this.prioridad,
-            titulo: this.titulo,
-            fecha: this.fecha
+            
+            title: this.title,
+            description: this.description,
+            priority: this.priority,
+            status: "t",
+            date: this.date,
+            userId: parseInt("7") ,
+            tecnicoId: parseInt("7"),
+            type: this.type,
+            category: this.category
+            //createdAt: this.createdAt,
+            //updatedAt: this.updatedAt
         }
         this.loading = true;
         this.ticketService.generarTicket(datosTicket).subscribe({
           next: (v) => {
             this.loading = false;
-            this.toastr.success(`El ticket ${this.titulo} fue registrado con exito`, 'Usuario registrado');
+            this.toastr.success(`El ticket ${this.title} fue registrado con exito`, 'Ticket registrado');
             this.router.navigate(['/crearticket']);
           },
           error: (e: HttpErrorResponse) => {
@@ -58,15 +74,7 @@ export class FormularioComponent implements OnInit {
             this._errorService.msjError(e);
           }
         })
-       // this.Ticket.enviar(datosTicket).subscribe({
-       //     next: (token) => {
-       //         localStorage.setItem('token', token);
-       //         this.router.navigate(['/dashboard'])
-       //     },
-        
-       // })
-
-
+      
     }
 
 

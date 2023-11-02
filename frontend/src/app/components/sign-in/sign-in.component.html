@@ -8,9 +8,17 @@
             <label>Usuario</label>
         </div>
     <!-- Boton de seleccion -->
+    <div class="form-floating mb-3 mt-3">
+        <input type="text" [(ngModel)]="name" class="form-control" placeholder="Ingrese nombre">
+        <label>Nombre</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+        <input type="text" [(ngModel)]="lastname" class="form-control" placeholder="Ingrese apellido">
+        <label>Apellido</label>
+    </div>
         <div class="form-floating mb-3 mt-3">
         
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <select [(ngModel)]="role" class="form-select form-select-sm" aria-label=".form-select-sm example">
                 <option selected>Seleccione Rol</option>
                 <option value="user">User</option>
                 <option value="Tecnico">Tecnico</option>

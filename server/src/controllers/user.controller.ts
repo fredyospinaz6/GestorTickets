@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 
 export const newUser = async (req: Request, res: Response) => {
 
-    const { username, password } = req.body;
+    const { username, password, name, lastname, role } = req.body; //
 
     // Validamos si el usuario ya existe en la base de datos
     const user = await User.findOne({ where: { username: username } });
@@ -22,7 +22,10 @@ export const newUser = async (req: Request, res: Response) => {
         // Guardarmos usuario en la base de datos
         await User.create({
             username: username,
-            password: hashedPassword
+            password: hashedPassword,
+            name:name,
+            lastname: lastname,
+            role: role
         })
     
         res.json({

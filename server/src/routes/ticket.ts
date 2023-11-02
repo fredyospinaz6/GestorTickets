@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import { getTickets } from '../controllers/ticket.controller';
+import { getTickets, newTicket } from '../controllers/ticket.controller';
 import validateToken from './validate-token';
 
 const router = Router();
 
-router.get('/',validateToken, getTickets)
+router.post('/', newTicket);
+
 
 export default router;

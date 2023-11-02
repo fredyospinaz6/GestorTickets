@@ -1,8 +1,13 @@
 export interface Ticket {
-    tipo: string;
-    prioridad: string;
-    categoria: string;
-    titulo: string ;
-    detalle: string;
-    fecha: string;
+    title: string;
+    description: string;
+    priority: string;
+    status: string;
+    date: string;
+    userId: any;
+    tecnicoId: any;
+    type: string;
+    category: string;
+    //createdAt: string;
+    //updatedA: string;
 }

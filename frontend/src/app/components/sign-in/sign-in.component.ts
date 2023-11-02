@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
   addUser() {
 
     // Validamos que el usuario ingrese valores
-    if (this.username == '' || this.password == '' || this.confirmPassword == '') {
+    if (this.username == '' || this.password == '' || this.confirmPassword == '' || this.name == '' || this.lastname == '' || this.role == '') {
       this.toastr.error('Todos los campos son obligatorios', 'Error');
       return;
     }

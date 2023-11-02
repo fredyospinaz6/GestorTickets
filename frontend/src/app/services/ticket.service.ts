@@ -14,10 +14,10 @@ export class TicketService {
   
     constructor(private http: HttpClient) {
       this.myAppUrl = environment.endpoint;
-      this.myApiUrl = 'api/ticket'
+      this.myApiUrl = 'api/tickets'
      }
   
-     generarTicket(Ticket: Ticket): Observable<any> {
-      return this.http.post(`${this.myAppUrl}${this.myApiUrl}`, Ticket);
+     generarTicket(ticket: Ticket): Observable<any> {
+      return this.http.post(`${this.myAppUrl}${this.myApiUrl}`, ticket);
      }
     }
