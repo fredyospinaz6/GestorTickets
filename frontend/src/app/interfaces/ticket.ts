@@ -4,10 +4,10 @@ export interface Ticket {
     priority: string;
     status: string;
     date: string;
-    userId: any;
-    tecnicoId: any;
+    userId: number;
+    tecnicoId: number;
     type: string;
     category: string;
-    //createdAt: string;
-    //updatedA: string;
+   // createdAt: string;
+    //updatedAt: string;
 }

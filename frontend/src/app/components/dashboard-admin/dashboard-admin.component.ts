@@ -12,4 +12,10 @@ export class DashboardAdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openPopup(): void {
+  }
+
+  closePopup(): void {
+  }
+
 }

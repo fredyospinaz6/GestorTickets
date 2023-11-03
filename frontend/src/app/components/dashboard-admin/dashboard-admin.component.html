@@ -1,167 +1,84 @@
-<p>dashboard-admin works!</p>
-<p>consulta works!</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- //<link rel="stylesheet" href="css/estilo.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <title>Consulta Tickets</title>
+</head>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-    <head>
-    <meta charset="utf-8">
-    <title>consulta de tickets</title>
-    </head>
-    <!-- <link rel="stylesheet" href="css/estilo4.css">
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet"> -->
-
-    <body>
+<body>
     <header>
         <div class="container_header">
             <div class="logo">
-                <img src="../../../assets/img/imagen7.jpg" alt="logo2">
-                <style>
-                    table,
-                    th,
-                    td {
-                        border: 2px solid rgb(255, 253, 253);
-                        border-collapse: collapse;
-                        position: center;
-                    }
-                </style>
-
+                <img src="../../../assets/img/lupa2.png" alt="logo1">
+                <nav>
+                    <ul>
+                        <li><a href="#">SALIR</a></li>
+                    </ul>
+                </nav>
             </div>
-            <!-- </header>  -->
-
-            <!-- <form class="" action="index.html" method="post"> -->
-            <h2>Tickets disponibles</h2>
-            <h4>Elije el ticket a consultar</h4>
-
-            <label for="tipo"></label><br>
-
-
-            <meta charset="utf-8" />
-            <meta http-equiv="x-ua-compatible" content="IE=edge" />
-            <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
-            <title>document</title>
-            <!-- </head> -->
-
-            <!-- <body> -->
-                <div class="table">
-
-                    <div>
-                        <button routerLink="/signIn">Registrar Nuevo Usuario</button>
-                    </div>
-
-                    <div>
-                        <button routerLink="/crearticket">Crear Ticket</button>
-                    </div>
-
-                    <button onclick="openModal()">tickets disponibles</button>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">id</th>
-                                <th scope="col">Usuario</th>
-                                <th scope="col">Tecnico </th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">6</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            <tr>
-                            
-                            <th scope="row">7</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">8</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">9</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">10</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">11</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">12</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            
-             <br>
-             <br>
-
-
-
-             <form class="" action="index.html" method="post">
-                <input type="submit" name="rsalir" value="salir" id="boton">
-
-                <style>
-
-                </style>
-
-                <form class="" action="consulta.html" method="post">
-                    <input type="submit" name="salir" value="consultar" id="boton">
-
-
+        </div>
+    </header>
+    <br>
+    <form action="index.html">
+        <h2>Mesa de Servicio</h2>
+        <br>
+        <div class="logo">
+          <img src="../../../assets/img/lupa.png"> 
+          
+          <!-- <input type="button" name="consultar" value="Consultar" id="boton" onclick="openPopup()"> -->
+          <button type="button" routerLink="/signIn" id="boton">Registrar Nuevo Usuario</button>
         
+            <img src="../../../assets/img/registro2.png"> 
+            <button type="button" routerLink="/signIn" id="boton">Registrar Nuevo Usuario</button>
+        
+   
+     
+            <img src="../../../assets/img/soporte-tecnico.png"> 
+            <button routerLink="/crearticket" type="button" id="boton" >Registrar Ticket</button>
+       
+                <br>
+     
+        
+            <img src="../../../assets/img/asignar.png" > 
+            <button routerLink="/crearticket" type="button" id="boton" >Asignar Ticket</button>
+        </div>
+        
+        
+    </form>
 
-              
+    <div id="popup" class="popup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2>Tickets Registrados</h2>
+        <table>
+            <tr>
+                <th>Encabezado 1</th>
+                <th>Encabezado 2</th>
+                <th>Encabezado 3</th>
+            </tr>
+            <tr>
+                <td>Dato 1</td>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+            </tr>
+            <tr>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+            </tr>
+        </table>
+    </div>
 
-            <!-- </body>
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+    <script>
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
 
-
-</html> -->
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>

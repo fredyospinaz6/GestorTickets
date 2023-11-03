@@ -15,19 +15,17 @@ export class FormularioComponent implements OnInit {
 
     loading: boolean = false;
 
-  //  id: string = '';
+    id: string = '';
     title: string = '';
     description: string = '';
     priority: string = '';
-    status: string = '';
+    status: string = 't';
     date: string = '';
-    userId: string = '';
-    tecnicoId: string = '';
+    userId: number =1;
+    tecnicoId: number =1 ;
     type: string = '';
     category: string = '';
-    //createdAt: string = '';
-    //updatedAt: string = '';
-
+  
     constructor(
         private toastr: ToastrService,
         public ticketService: TicketService,
@@ -40,27 +38,25 @@ export class FormularioComponent implements OnInit {
 
     enviar(): void {
         // Validamos campos llenos
-        /*if ( this.title == '' || this.description == '' || this.priority == '' || this.status == ''
-        || this.date == '' || this.userId == '' || this.tecnicoId == '' || this.type == '' || this.category == ''
-         || this.createdAt == '' || this.updatedA == '') {
+        if ( this.title == '' || this.description == '' || this.priority == '' || this.status == ''
+        || this.date == '' || this.type == '' || this.category == '') {
             this.toastr.error('Todos los campos son obligatorios', 'Error');
             return;
 
-        }*/
+        }
         // Creamos el Ticket
         const datosTicket: Ticket = {
             
             title: this.title,
             description: this.description,
             priority: this.priority,
-            status: "t",
+            status: this.status,
             date: this.date,
-            userId: parseInt("7") ,
-            tecnicoId: parseInt("7"),
+            userId: this.userId,
+            tecnicoId: this.tecnicoId,
             type: this.type,
-            category: this.category
-            //createdAt: this.createdAt,
-            //updatedAt: this.updatedAt
+            category: this.category,
+         
         }
         this.loading = true;
         this.ticketService.generarTicket(datosTicket).subscribe({
