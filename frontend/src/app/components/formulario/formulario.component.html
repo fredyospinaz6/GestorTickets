@@ -55,6 +55,47 @@
       <input type="submit" name="volver" value="volver" id="boton" routerLink="/dashboard-admin">
     
     </form>
+    <button (click)="openPopup()">Consultar</button>
+    <div id="popup" class="popup" [ngClass]="{'show': showPopup}">
+      <button (click)="getTickets()">Consultar</button>
+      <!-- Contenido de la ventana emergente -->
+      <span class="close-btn" (click)="closePopup()">&times;</span>
+      <h2>Tickets</h2>
+
+      <table>
+        <tr>
+          <!-- <th>ID</th> -->
+          <th>Tipo</th>
+          <th>Prioridad</th>
+          <th>Categoria</th>
+          <th>Título</th>
+          <th>Detalles</th>
+          <th>Fecha</th>
+        </tr>
+        <tr *ngFor="let ticket of tickets">
+          <!-- <td>{{ ticket.id }}</td> -->
+          <td>{{ticket.type}}</td>
+          <td>{{ticket.priority}}</td>
+          <td>{{ticket.category}}</td>
+          <td>{{ ticket.title }}</td>
+          <td>{{ ticket.description }}</td>
+          <td>{{ticket.date}}</td>
+          <td>
+            <button (click)="updateTicket(ticket.id, ticket)">Editar</button>
+            <button (click)="deleteTicket(ticket.id)">Eliminar</button>
+          </td>
+        </tr>
+      </table>
+      
+      <h3>Actualizar Ticket</h3>
+      
+        <form (submit)="enviar()">
+          <!-- <input type="text" [(ngModel)]="generarTicket.title" placeholder="Título">
+          <input type="text" [(ngModel)]="generarTicket.description" placeholder="Descripción"> -->
+          <button type="submit">Agregar</button>
+        </form>
+    </div>
+   
     
   </body>
 </html>

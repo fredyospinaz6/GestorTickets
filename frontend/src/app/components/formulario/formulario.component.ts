@@ -11,8 +11,9 @@ import { HttpErrorResponse } from '@angular/common/http';
     templateUrl: './formulario.component.html',
     styleUrls: ['./formulario.component.css']
 })
-export class FormularioComponent implements OnInit {
 
+export class FormularioComponent implements OnInit {
+  tickets: any[] = [];
     loading: boolean = false;
 
     id: string = '';
@@ -33,9 +34,17 @@ export class FormularioComponent implements OnInit {
         private _errorService: ErrorService
     ) { }
 
-    ngOnInit(): void {
+    /*ngOnInit(): void {
+    }*/
+    getTickets() {
+      this.ticketService.getTickets().subscribe((data: any) => {
+        this.tickets = data;
+      });
     }
-
+    ngOnInit() {
+      this.getTickets();
+    }
+ 
     enviar(): void {
         // Validamos campos llenos
         if ( this.title == '' || this.description == '' || this.priority == '' || this.status == ''
@@ -72,6 +81,26 @@ export class FormularioComponent implements OnInit {
         })
       
     }
-
+    updateTicket(id: number, ticket: any) {
+      this.ticketService.updateTicket(id, ticket).subscribe(() => {
+        this.getTickets();
+      });
+    }
+    deleteTicket(id: number) {
+      this.ticketService.deleteTicket(id).subscribe(() => {
+        this.getTickets();
+      });
+    }
+   // export class FormularioComponent {
+      showPopup = false;
+    
+      openPopup() {
+        this.showPopup = true;
+        this.showPopup = true;
+      }
+    
+      closePopup() {
+        this.showPopup = false;
+      }
 
 }

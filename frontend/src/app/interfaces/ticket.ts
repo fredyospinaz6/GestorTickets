@@ -8,6 +8,5 @@ export interface Ticket {
     tecnicoId: number;
     type: string;
     category: string;
-   // createdAt: string;
-    //updatedAt: string;
+
 }

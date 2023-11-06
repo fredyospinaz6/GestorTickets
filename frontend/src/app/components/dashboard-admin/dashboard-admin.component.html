@@ -12,9 +12,9 @@
             <div class="logo">
                 <img src="../../../assets/img/lupa2.png" alt="logo1">
                 <nav>
-                    <ul>
+                    <!-- <ul>
                         <li><a href="#">SALIR</a></li>
-                    </ul>
+                    </ul> -->
                 </nav>
             </div>
         </div>
@@ -25,30 +25,35 @@
         <br>
         <div class="logo">
           <img src="../../../assets/img/lupa.png"> 
-          
-          <!-- <input type="button" name="consultar" value="Consultar" id="boton" onclick="openPopup()"> -->
-          <button type="button" routerLink="/signIn" id="boton">Registrar Nuevo Usuario</button>
+          <!-- <button type="button" routerLink="/consulta" id="boton">Consultar Tickets </button><br> -->
+          <button (click)="openPopup()" id="boton">Consultar Tickets</button><br>
         
             <img src="../../../assets/img/registro2.png"> 
-            <button type="button" routerLink="/signIn" id="boton">Registrar Nuevo Usuario</button>
-        
-   
-     
+            <button type="button" routerLink="/signIn" id="boton">Registrar Nuevo Usuario</button><br>
+
             <img src="../../../assets/img/soporte-tecnico.png"> 
-            <button routerLink="/crearticket" type="button" id="boton" >Registrar Ticket</button>
+            <button routerLink="/crearticket" type="button" id="boton" >Registrar Ticket</button><br>
        
-                <br>
-     
-        
             <img src="../../../assets/img/asignar.png" > 
-            <button routerLink="/crearticket" type="button" id="boton" >Asignar Ticket</button>
+            <button routerLink="/crearticket" type="button" id="boton" >Asignar Ticket</button><br>
+            <br>
+            <button routerLink="/crearticket" type="button" id="botonSalir" style="background-color: blue;"> SALIR </button>
+           
         </div>
-        
-        
+     
     </form>
 
-    <div id="popup" class="popup">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
+    <div id="popup" class="popup" #popup>
+        <!-- Contenido de la ventana emergente -->
+    </div>
+
+</body>
+ 
+ <!-- <button (click)="openPopup()">Abrir Ventana Emergente</button> -->
+
+ <div id="popup" class="popup" [ngClass]="{'show': showPopup}">
+   <!-- Contenido de la ventana emergente -->
+   <span class="close-btn" (click)="closePopup()">&times;</span>
         <h2>Tickets Registrados</h2>
         <table>
             <tr>
@@ -66,19 +71,20 @@
                 <td>Dato 5</td>
                 <td>Dato 6</td>
             </tr>
-        </table>
+        </table> 
     </div>
 
-    <div id="overlay" class="overlay" onclick="closePopup()"></div>
-    <script>
-        function openPopup() {
-            document.getElementById("popup").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
-        }
+    <!-- <div id="overlay" class="overlay" onclick="closePopup()">
+        <script>
+            function openPopup() {
+                document.getElementById("popup").style.display = "block";
+                document.getElementById("overlay").style.display = "block";
+            }
 
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-            document.getElementById("overlay").style.display = "none";
+            function closePopup() {
+                document.getElementById("popup").style.display = "none";
+                document.getElementById("overlay").style.display = "none";
         }
-    </script>
-</body>
+        </script>
+    </div> -->
+ 

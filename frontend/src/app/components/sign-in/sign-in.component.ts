@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/interfaces/user';
 import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
+//import { UsersService } from 'path/to/usersService';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,6 +13,16 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
+  showPopup = false;
+
+  openPopup() {
+    this.showPopup = true;
+  }
+
+  closePopup() {
+    this.showPopup = false;
+  }
+  users: any[] = [];
   username: string = '';
   password: string = '';
   name: string = '';
@@ -23,16 +34,26 @@ export class SignInComponent implements OnInit {
   constructor(private toastr: ToastrService,
     private _userService: UserService,
     private router: Router,
-    private _errorService: ErrorService) { }
+    private _errorService: ErrorService
+    //private usersService: UsersService
+    ) { }
 
-  ngOnInit(): void {
-  }
+    getUsers() {
+      this._userService.getUsers().subscribe((data: any) => {
+        this.users = data;
+      });
+    }
+
+    ngOnInit() {
+      this.getUsers();
+    }
 
   addUser() {
 
     // Validamos que el usuario ingrese valores
     if (this.username == '' || this.password == '' || this.confirmPassword == '' || this.name == '' || this.lastname == '' || this.role == '') {
       this.toastr.error('Todos los campos son obligatorios', 'Error');
+      this.getUsers();
       return;
     }
 
@@ -63,6 +84,18 @@ export class SignInComponent implements OnInit {
         this.loading = false;
         this._errorService.msjError(e);
       }
+
+    
     })
+  }
+  updateUser(id: number, user: any) {
+    this._userService.updateUser(id, user).subscribe(() => {
+      this.getUsers();
+    });
+  }
+  deleteUser(id: number) {
+    this._userService.deleteUser(id).subscribe(() => {
+      this.getUsers();
+    });
   }
 }
