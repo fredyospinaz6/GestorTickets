@@ -50,7 +50,7 @@ form {
   background: rgba(0, 0, 0, 0.6);
   padding: 10px 50px;
   box-sizing: border-box;
-  margin-top: 120px;
+  margin-top: 50px;
   border-radius: 15px;
 }
 
@@ -90,6 +90,7 @@ textarea {
 #boton {
   background:  #13b037;
   color: #ffffff;
+  width: 250px;
   padding: 0px;
   cursor: pointer;
   transition: box-shadow 500ms;

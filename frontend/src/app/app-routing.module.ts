@@ -11,6 +11,7 @@ import { AuthGuard } from './utils/auth.guard';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
+import { ListTicketsComponent } from './components/list-tickets/list-tickets.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'login-admin', component: LoginAdminComponent },
   { path: 'dashboard-admin', component: DashboardAdminComponent },
+  { path: 'consultar-ticket', component: ListTicketsComponent },
   { path: 'signIn', component: SignInComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'crearticket', component: FormularioComponent },

@@ -1,0 +1,44 @@
+<!-- <app-progress-bar *ngIf="loading"></app-progress-bar> -->
+<div  class="container">
+    <div class="title">
+        <h4>TICKEST</h4>
+        <button type="button" class="btn btn-primary" routerLink="/crearticket">Agregar Ticket</button>
+    </div>
+
+    <table *ngIf="listTickets.length > 0" class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Prioridad</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">userId</th>
+            <th scope="col">tecnicoId</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Categoria</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listTickets" class="table-active">
+            <td>{{ item.id }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.priority}}</td>
+            <td>{{ item.status }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ item.userId }}</td>
+            <td>{{ item.tecnicoId }}</td>
+            <td>{{ item.type }}</td>
+            <td>{{ item.category }}</td>
+            <td>
+                <button routerLink="/edit/{{ item.id}}" type="button" class="btn btn-info btn-sm">Actualizar</button>
+                <button (click)="deleteTicket(item.id!)" type="button" class="btn btn-secondary btn-sm ms-2">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 *ngIf="listTickets.length == 0">No hay tickets para mostrar</h5>
+</div>

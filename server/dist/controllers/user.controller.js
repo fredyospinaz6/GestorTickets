@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.loginUser = exports.newUser = void 0;
+exports.consultarUserId = exports.loginUser = exports.newUser = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const user_model_1 = require("../models/user.model");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
@@ -70,3 +70,8 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.json(token);
 });
 exports.loginUser = loginUser;
+const consultarUserId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userId = yield user_model_1.User.findAll({ where: { role: 'tecnico' }, attributes: ['id'] });
+    res.json(userId);
+});
+exports.consultarUserId = consultarUserId;

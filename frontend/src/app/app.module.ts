@@ -21,6 +21,7 @@ import { LoginAdminComponent } from './components/login-admin/login-admin.compon
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { ConsultaComponent } from './components/consulta/consulta.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
+import { ListTicketsComponent } from './components/list-tickets/list-tickets.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-
     LoginAdminComponent,
     FormularioComponent,
     ConsultaComponent,
-    DashboardAdminComponent
+    DashboardAdminComponent,
+    ListTicketsComponent
   ],
   imports: [
     BrowserModule,

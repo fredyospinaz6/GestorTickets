@@ -67,3 +67,8 @@ export const loginUser = async (req: Request, res: Response) => {
    
    res.json(token);
 }
+export const consultarUserId = async (req: Request, res: Response) => {
+    const userId = await User.findAll( {where: { role: 'tecnico' }, attributes: ['id'] });
+
+    res.json(userId)
+}

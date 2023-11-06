@@ -1,32 +1,11 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- //<link rel="stylesheet" href="css/estilo.css"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-    <title>Consulta Tickets</title>
-</head>
 
 <body>
-    <header>
-        <div class="container_header">
-            <div class="logo">
-                <img src="../../../assets/img/lupa2.png" alt="logo1">
-                <nav>
-                    <!-- <ul>
-                        <li><a href="#">SALIR</a></li>
-                    </ul> -->
-                </nav>
-            </div>
-        </div>
-    </header>
-    <br>
+    <app-navbar></app-navbar> 
     <form action="index.html">
-        <h2>Mesa de Servicio</h2>
-        <br>
+        <h2>Menu</h2>
         <div class="logo">
           <img src="../../../assets/img/lupa.png"> 
-          <!-- <button type="button" routerLink="/consulta" id="boton">Consultar Tickets </button><br> -->
-          <button (click)="openPopup()" id="boton">Consultar Tickets</button><br>
+          <button type="button" routerLink="/consultar-ticket" id="boton">Consultar Tickets </button><br>
         
             <img src="../../../assets/img/registro2.png"> 
             <button type="button" routerLink="/signIn" id="boton">Registrar Nuevo Usuario</button><br>
@@ -51,8 +30,8 @@
  
  <!-- <button (click)="openPopup()">Abrir Ventana Emergente</button> -->
 
- <div id="popup" class="popup" [ngClass]="{'show': showPopup}">
-   <!-- Contenido de la ventana emergente -->
+ <!-- <div id="popup" class="popup" [ngClass]="{'show': showPopup}">
+   <Contenido de la ventana emergente -
    <span class="close-btn" (click)="closePopup()">&times;</span>
         <h2>Tickets Registrados</h2>
         <table>
@@ -72,19 +51,6 @@
                 <td>Dato 6</td>
             </tr>
         </table> 
-    </div>
-
-    <!-- <div id="overlay" class="overlay" onclick="closePopup()">
-        <script>
-            function openPopup() {
-                document.getElementById("popup").style.display = "block";
-                document.getElementById("overlay").style.display = "block";
-            }
-
-            function closePopup() {
-                document.getElementById("popup").style.display = "none";
-                document.getElementById("overlay").style.display = "none";
-        }
-        </script>
     </div> -->
- 
+
+

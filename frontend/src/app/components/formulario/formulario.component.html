@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>CREACION DE TICKETS</title>
-  </head>
-  <!-- <link rel="stylesheet" href="css/estilo3.css"> -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet"> -->
-  <body id="formulario">
-    <header>
-      <!-- <div class="container_header"> -->
-        <div class="logo">
-          <img src="../../../assets/img/avatar.jpg" alt="logo">
-      
-        </div>
-    </header>
-    <form class="" action="index.html" method="post">
-      <h2>NUEVA SOLICITUD</h2>
-      <h4>Completa el siguiente formulario para crear un nuevo ticket</h4>
-      <label for="tipo">Tipo</label><br>
+
+<body id="formulario">
+  <app-navbar></app-navbar>
+
+  <form class="" action="index.html" method="post">
+    <h2>NUEVA SOLICITUD</h2>
+    <h4>Completa el siguiente formulario para crear un nuevo ticket</h4>
+    <div class="fila">
+      <label for="tipo" class="columna">Tipo</label><br>
+      <label for="prioridad" class="columna">Prioridad</label><br>
+      <label for="categoria" class="columna">Categoria</label><br>
+    </div>
+    <div class="fila">
+      <!-- <label for="tipo" class="columna">Tipo</label><br> -->
       <select [(ngModel)]="type" name="tipo" id="tipo">
         <option value="">--Selecione--</option>
         <option value="incidencia">Incidencia</option>
@@ -25,7 +19,7 @@
       </select>
       <br>
       <!--<input type="text" name="destino" value="" placeholder="Ingrese area">-->
-      <label for="prioridad">Prioridad</label><br>
+      <!-- <label for="prioridad" class="columna">Prioridad</label><br> -->
       <select [(ngModel)]="priority" name="prioridad" id="prioridad">
         <option value="">--Seleccione--</option>
         <option value="muy urgente">Muy Urgente</option>
@@ -35,8 +29,8 @@
         <option value="muy baja">Muy Baja</option>
       </select>
       <br>
-      <label for="categoria">Categoria</label><br>
-      <select [(ngModel)]="category" name="categoria" id="categoria">
+      <!-- <label for="categoria" class="columna">Categoria</label><br> -->
+      <select [(ngModel)]="category" name="categoria" id="categoria" >
         <option value="">--Seleccione--</option>
         <option value="impresoras">Impresoras</option>
         <option value="computadores">Computadores</option>
@@ -44,58 +38,25 @@
         <option value="creacion usuario">Creacion Usuario</option>
       </select>
       <br>
-      <!--<input type="text" name="prioridad" value="" placeholder="Ingrese prioridad">-->
-      <label for="resumen">Titulo</label>
-      <input [(ngModel)]="title" type="text" name="titulo" value="" placeholder="Titulo">
-      <label for="detalle">Detalle del ticket</label><br>
-      <textarea [(ngModel)]="description" name="detalle" placeholder="Describa el motivo de su solicitud"></textarea>
-      <input [(ngModel)]="date" type="text" name="fecha" value="" placeholder="fecha">
-      <input type="submit" name="register" value="Enviar" id="boton" (click)="enviar()">
-      <!-- <input type="submit" name="volver" value="volver" id="boton" (click)="volver()"> -->
-      <input type="submit" name="volver" value="volver" id="boton" routerLink="/dashboard-admin">
-    
-    </form>
-    <button (click)="openPopup()">Consultar</button>
-    <div id="popup" class="popup" [ngClass]="{'show': showPopup}">
-      <button (click)="getTickets()">Consultar</button>
-      <!-- Contenido de la ventana emergente -->
-      <span class="close-btn" (click)="closePopup()">&times;</span>
-      <h2>Tickets</h2>
 
-      <table>
-        <tr>
-          <!-- <th>ID</th> -->
-          <th>Tipo</th>
-          <th>Prioridad</th>
-          <th>Categoria</th>
-          <th>Título</th>
-          <th>Detalles</th>
-          <th>Fecha</th>
-        </tr>
-        <tr *ngFor="let ticket of tickets">
-          <!-- <td>{{ ticket.id }}</td> -->
-          <td>{{ticket.type}}</td>
-          <td>{{ticket.priority}}</td>
-          <td>{{ticket.category}}</td>
-          <td>{{ ticket.title }}</td>
-          <td>{{ ticket.description }}</td>
-          <td>{{ticket.date}}</td>
-          <td>
-            <button (click)="updateTicket(ticket.id, ticket)">Editar</button>
-            <button (click)="deleteTicket(ticket.id)">Eliminar</button>
-          </td>
-        </tr>
-      </table>
-      
-      <h3>Actualizar Ticket</h3>
-      
-        <form (submit)="enviar()">
-          <!-- <input type="text" [(ngModel)]="generarTicket.title" placeholder="Título">
-          <input type="text" [(ngModel)]="generarTicket.description" placeholder="Descripción"> -->
-          <button type="submit">Agregar</button>
-        </form>
-    </div>
-   
+       <select type = "number" [(ngModel)]="tecnicoId" name="tecnicoId" id="tecnicoId">
+
+          <option *ngFor="let item of UserID"  value= {{item.id}}>{{ item.id }}</option>
+
+      </select>
+      <!-- <input type="number" [(ngModel)]="tecnicoId" name= "tecnicoId" id="tecnicoId"> -->
     
-  </body>
-</html>
+      
+    </div>
+    <br>
+    <!--<input type="text" name="prioridad" value="" placeholder="Ingrese prioridad">-->
+    <label for="resumen">Titulo</label>
+    <input [(ngModel)]="title" type="text" name="titulo" value="" placeholder="Titulo">
+    <label for="detalle">Detalle del ticket</label><br>
+    <textarea [(ngModel)]="description" name="detalle" placeholder="Describa el motivo de su solicitud"></textarea>
+    
+    <input type="submit" name="register" value="Enviar" id="boton" (click)="enviar()">
+    <!-- <input type="submit" name="volver" value="volver" id="boton" (click)="volver()"> -->
+  </form>
+    
+</body>
