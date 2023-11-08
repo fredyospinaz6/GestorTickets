@@ -22,7 +22,7 @@ export class FormularioComponent implements OnInit {
     title: string = '';
     description: string = '';
     priority: string = '';
-    status: string = 't';
+    status: string = 'PENDIENTE';
     date: Date = new Date();
     userId: number = 0;
     tecnicoId: number = 0 ;
@@ -86,11 +86,11 @@ export class FormularioComponent implements OnInit {
         })
       
     }
-    updateTicket(id: number, ticket: any) {
+    /*updateTicket(id: number, ticket: any) {
       this.ticketService.updateTicket(id, ticket).subscribe(() => {
         this.getTickets();
       });
-    }
+    }*/
     deleteTicket(id: number) {
       this.ticketService.deleteTicket(id).subscribe(() => {
         this.getTickets();

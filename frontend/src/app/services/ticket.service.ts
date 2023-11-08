@@ -37,8 +37,11 @@ export class TicketService {
         return this.http.get<Ticket>(`${this.myAppUrl}${this.myApiUrl}${id}`)
     }
      
-    updateTicket (id: number, ticket: Ticket ): Observable<void> {
-        return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, ticket);
+    updateTicket (id: number ): Observable<void> {
+        return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`,null);
+    }
+    actualizarEstado(id: number, estado: string ): Observable<void> {
+      return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, estado);
     }
     /*consultarUserId (): Observable<User[]> {
       return this.http.get<User[]>(`${this.myAppUrl}${this.myApiUrl}`);

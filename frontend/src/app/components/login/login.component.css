@@ -4,3 +4,11 @@
     border-radius: 5%;
     padding: 60px 40px;
 }
+.fila{
+    display: flex;
+}
+.columna{
+    flex: 1;
+    
+}
+

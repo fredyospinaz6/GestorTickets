@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/interfaces/product';
-import { ProductService } from 'src/app/services/product.service';
-import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Ticket } from 'src/app/interfaces/ticket';
+import { TicketService } from 'src/app/services/ticket.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -9,31 +10,42 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  listProduct: Product[] = [];
+  listTickets: Ticket[] = []
+  loading: boolean = false;
 
-  constructor(
-    private _productService: ProductService,
-    private router: Router
-  ) { }
+  constructor(private _ticketService: TicketService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.getProducts();
+    this.getListtickest();
   }
 
-  getProducts() {
-    this._productService.getProducts().subscribe(data => {
-      this.listProduct = data;
+  getListtickest() {
+    this.loading = true;
+
+    this._ticketService.getListTickets().subscribe((data: Ticket[]) => {
+      this.listTickets = data;
+      this.loading = false;
     })
   }
 
-  crearTicket(): void {
-     this.router.navigate(['/crearticket']);
+  deleteTicket(id: number) {
+    this.loading = true;
+    this._ticketService.deleteTicket(id).subscribe(() => {
+      this.getListtickest();
+      this.toastr.warning('El ticket fue eliminado con exito', 'ticket eliminado');
+    })
   }
-
-  consultarTicket(): void {
-
-    this.router.navigate(['/consultartickets'])
+  updateTicket(id: number) {
+    this._ticketService.updateTicket(id).subscribe(() => {
+      this.getListtickest();
+    });
   }
+  mostrarBoton = true;
 
+  ocultarBoton() {
+    this.mostrarBoton = false;
+    this.getListtickest();
+    this.mostrarBoton = false;
+  }
 
 }

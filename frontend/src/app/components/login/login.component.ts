@@ -1,4 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
+import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   name: string = '';
   lastname: string = '';
   role: string = '';
-
+  userRole: string= '';
   loading: boolean = false;
 
   constructor(private toastr: ToastrService,
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
       this.toastr.error('Todos los campos son obligatorios', 'Error');
       return
     }
-
+   
     // Creamos el usuario
     const user: User = {
       username: this.username,
@@ -45,18 +46,32 @@ export class LoginComponent implements OnInit {
       role: this.role
     }
 
-    this.loading = true;
-    this._userService.login(user).subscribe({
-      next: (token) => {
-        localStorage.setItem('token', token);
-        this.router.navigate(['/dashboard'])
-      },
-      error: (e: HttpErrorResponse) => {
-        this._errorService.msjError(e);
-        this.loading = false
-      }
-    })
-  }
+   
+      this.loading = true;
+      this._userService.login(user).subscribe((data: any) => {
+        this.userRole = data;
+        if (this.userRole == 'tecnico'){
+          this.router.navigate(['/dashboard'])
+        }else if (this.userRole == 'user'){
+          this.router.navigate(['/crearticket'])
+        }
+        console.log(this.userRole);
+      });
 
+      /*this._userService.login(user).subscribe({
+        if (userRole == 'tecnico') {
+          this.router.navigate(['/dashboard'])
+        }
+
+        next: (token) => {
+          localStorage.setItem('token', token);
+          this.router.navigate(['/dashboard'])
+        },
+        error: (e: HttpErrorResponse) => {
+          this._errorService.msjError(e);
+          this.loading = false
+        }
+      })*/
+  }
 
 }
