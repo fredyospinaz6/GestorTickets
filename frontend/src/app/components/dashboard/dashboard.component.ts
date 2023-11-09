@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   getListtickest() {
     this.loading = true;
 
-    this._ticketService.getListTickets().subscribe((data: Ticket[]) => {
+    this._ticketService.getTicketstecnico().subscribe((data: Ticket[]) => {
       this.listTickets = data;
       this.loading = false;
     })

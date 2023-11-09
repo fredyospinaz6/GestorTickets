@@ -26,6 +26,9 @@ export class UserService {
    login(user: User): Observable<string> {
     return this.http.post<string>(`${this.myAppUrl}${this.myApiUrl}/login`, user)
    }
+   capturaIdRole(user: User): Observable<string> {
+    return this.http.post<string>(`${this.myAppUrl}${this.myApiUrl}/login`, user)
+   }
 
    getUsers() {
     return this.http.get(`${this.apiUrl}`);

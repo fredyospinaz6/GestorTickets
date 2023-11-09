@@ -24,6 +24,9 @@ export class TicketService {
     getListTickets(): Observable<Ticket[]> {
         return this.http.get<Ticket[]>(`${this.myAppUrl}${this.myApiUrl}`);
     }
+    getTicketstecnico(id: number): Observable<Ticket> {
+      return this.http.get<Ticket>(`${this.myAppUrl}${this.myApiUrl}${id}`)
+    }
      
     deleteTicket(id: number): Observable<void> {
         return this.http.delete<void>(`${this.myAppUrl}${this.myApiUrl}${id}`)

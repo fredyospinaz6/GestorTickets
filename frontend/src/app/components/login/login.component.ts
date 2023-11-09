@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   lastname: string = '';
   role: string = '';
   userRole: string= '';
+  userIds: string = '';
   loading: boolean = false;
 
   constructor(private toastr: ToastrService,
@@ -50,12 +51,13 @@ export class LoginComponent implements OnInit {
       this.loading = true;
       this._userService.login(user).subscribe((data: any) => {
         this.userRole = data;
-        if (this.userRole == 'tecnico'){
-          this.router.navigate(['/dashboard'])
+        console.log(this.userRole);
+        if (this.userRole[0] == 'tecnico'){
+          this.router.navigate([`/dashboard/${this.userRole[1]}`])
         }else if (this.userRole == 'user'){
           this.router.navigate(['/crearticket'])
         }
-        console.log(this.userRole);
+        
       });
 
       /*this._userService.login(user).subscribe({
