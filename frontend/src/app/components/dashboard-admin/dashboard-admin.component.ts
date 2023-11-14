@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import * as FileSaver from 'file-saver';
 
+import { TicketService } from 'src/app/services/ticket.service';
 
 @Component({
   selector: 'app-dashboard-admin',
@@ -8,33 +10,22 @@ import { Component } from '@angular/core';
 
 })
 export class DashboardAdminComponent {
-  showPopup = false;
 
-  openPopup() {
-    this.showPopup = true;
+  constructor(private ticketService: TicketService) {}
+
+  generateTextReport() {
+
+    //... obtener datos
+  
+    let blob = new Blob([], {type: 'text/plain'});
+  
+    FileSaver.saveAs(blob, 'report.txt');
+  
   }
-
-  closePopup() {
-    this.showPopup = false;
-  }
-/*export class DashboardAdminComponent  {
-  showPopup = false;
-
-  /*constructor() { }
-
- /* implements OnInit
-  ngOnInit(): void {
-  }
-
-  openPopup() {
-    this.showPopup = true;
-  }
-  closePopup() {
-    this.showPopup = false;
-  }
+  
+  
 
 
-*/
 
 
 }

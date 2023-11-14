@@ -1,0 +1,51 @@
+
+<body id="formulario">
+    <app-navbar></app-navbar>
+  
+    <form class="" action="index.html" method="post">
+      <h2>NUEVA SOLICITUD</h2>
+      <h4>Completa el siguiente formulario para crear un nuevo ticket</h4>
+      <div class="fila">
+        <label for="tipo" class="columna">Tipo</label><br>
+        <label for="prioridad" class="columna">Prioridad</label><br>
+        <label for="categoria" class="columna">Categoria</label><br>
+      </div>
+      <div class="fila">
+        <!-- <label for="tipo" class="columna">Tipo</label><br> -->
+        <select [(ngModel)]="type" name="tipo" id="tipo">
+          <option value="">--Selecione--</option>
+          <option value="incidencia">Incidencia</option>
+          <option value="requerimiento">Requerimiento</option>
+        </select>
+        <br>
+        <!--<input type="text" name="destino" value="" placeholder="Ingrese area">-->
+        <!-- <label for="prioridad" class="columna">Prioridad</label><br> -->
+        <select [(ngModel)]="priority" name="prioridad" id="prioridad">
+          <option value="">--Seleccione--</option>
+          <option value="muy urgente">Muy Urgente</option>
+          <option value="alta">Alta</option>
+          <option value="mediana">Mediana</option>
+          <option value="baja">Baja</option>
+          <option value="muy baja">Muy Baja</option>
+        </select>
+        <br>
+        <!-- <label for="categoria" class="columna">Categoria</label><br> -->
+        <select [(ngModel)]="category" name="categoria" id="categoria" >
+          <option value="">--Seleccione--</option>
+          <option value="impresoras">Impresoras</option>
+          <option value="computadores">Computadores</option>
+          <option value="redes">Redes</option>
+          </select>
+      </div>
+      <br>
+      <label for="resumen">Titulo</label>
+      <input [(ngModel)]="title" type="text" name="titulo" value="" placeholder="Titulo">
+      <br>
+      <label for="exampleTextarea" class="form-label mt-4">Detalle del ticke</label>
+      <textarea class="form-control" [(ngModel)]="description" name="detalle" placeholder="Describa el motivo de su solicitud" id="exampleTextarea" rows="3"></textarea>
+      <input type="submit" name="register" value="Enviar" id="boton" (click)="enviar()">
+    
+    </form>
+      
+  </body>
+  

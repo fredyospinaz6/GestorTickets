@@ -20,7 +20,7 @@
                     <th scope="col">Estado</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">userId</th>
-                    <th scope="col">tecnicoId</th>
+                    <!-- <th scope="col">tecnicoId</th> -->
                     <th scope="col">Tipo</th>
                     <th scope="col">Categoria</th>
                     <th scope="col">Accion</th>
@@ -35,12 +35,12 @@
                     <td>{{ item.status }}</td>
                     <td>{{ item.date }}</td>
                     <td>{{ item.userId }}</td>
-                    <td>{{ item.tecnicoId }}</td>
+                    <!-- <td>{{ item.tecnicoId }}</td> -->
                     <td>{{ item.type }}</td>
                     <td>{{ item.category }}</td>
                     <td>
 
-                        <button (click)="updateTicket(item.id!)" type="button" class="btn btn-success btn-sm">REALIZADO</button>
+                        <button (click)="actualizarEstado(item.id!)" type="button" class="btn btn-success btn-sm">REALIZADO</button>
                     </td>
                   </tr>
                 </tbody>

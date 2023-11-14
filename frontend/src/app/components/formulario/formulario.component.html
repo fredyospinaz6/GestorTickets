@@ -44,20 +44,16 @@
           <option *ngFor="let item of UserID"  value= {{item.id}}>{{ item.id }}</option>
 
       </select>
-      <!-- <input type="number" [(ngModel)]="tecnicoId" name= "tecnicoId" id="tecnicoId"> -->
-    
       
     </div>
     <br>
-    <!--<input type="text" name="prioridad" value="" placeholder="Ingrese prioridad">-->
     <label for="resumen">Titulo</label>
     <input [(ngModel)]="title" type="text" name="titulo" value="" placeholder="Titulo">
     <label for="detalle">Detalle del ticket</label><br>
     <textarea [(ngModel)]="description" name="detalle" placeholder="Describa el motivo de su solicitud"></textarea>
     
     <input type="submit" name="register" value="Enviar" id="boton" (click)="enviar()">
-    <!-- <input type="submit" name="volver" value="volver" id="boton" (click)="volver()">  -->
-    <button routerLink="/dashboard" type="button" id="boton" >Volver</button><br>
+  
   </form>
     
 </body>

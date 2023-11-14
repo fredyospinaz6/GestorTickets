@@ -8,12 +8,11 @@ import { ErrorService } from 'src/app/services/error.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-    selector: 'app-formulario',
-    templateUrl: './formulario.component.html',
-    styleUrls: ['./formulario.component.css']
+  selector: 'app-formulario-user',
+  templateUrl: './formulario-user.component.html',
+  styleUrls: ['./formulario-user.component.css']
 })
-
-export class FormularioComponent implements OnInit {
+export class FormularioUserComponent implements OnInit {
   tickets: any[] = [];
   UserID: any[] = [];
     loading: boolean = false;
@@ -47,7 +46,6 @@ export class FormularioComponent implements OnInit {
     }
     ngOnInit() {
       this.getTickets();
-      this.consultarUserId();
     }
  
     enviar(): void {
@@ -70,7 +68,7 @@ export class FormularioComponent implements OnInit {
           next: (v) => {
             this.loading = false;
             this.toastr.success(`El ticket ${this.title} fue registrado con exito`, 'Ticket registrado');
-            this.router.navigate(['/crearticket']);
+            this.router.navigate(['/crearticketuser']);
           },
           error: (e: HttpErrorResponse) => {
             this.loading = false;

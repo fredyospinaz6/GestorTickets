@@ -1,8 +1,13 @@
-body {
-    
+/* Estilo Formulario */
+
+  /*  */
+  body {
+    background-image: url(../../../assets/img/imagen6.jpg);
     background-size: 100vw 100vh;
     background-attachment: fixed;
     margin: 0;
+    align-items: center;
+    align-content: center;
     font-family: 'Comfortaa', cursive;
   }
   
@@ -15,7 +20,7 @@ body {
     top: 0;
     right: 0;
     z-index: 100;
-    background: rgba(6, 94, 145, 0.88);
+    background: rgba(7, 171, 242, 0.88);
     font-weight: 600;
   }
   
@@ -41,20 +46,31 @@ body {
   
   form {
     width: 450px;
+    height: 85%;
     margin: auto;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.616);
     padding: 10px 20px;
     box-sizing: border-box;
-    margin-top: 150px;
+    margin-top: 20px;
     border-radius: 7px;
+  }
+
+  .fila{
+    display: flex;
+    
+  }
+  .columna{
+    flex: 1;
+    padding: 25px;
   }
   
   label {
     font-weight: bold;
+    color: white;
   }
   
   h2 {
-    color: rgb(255, 255, 255);
+    color: white;
     text-align: center;
     margin: 0;
     font-size: 30px;
@@ -63,7 +79,7 @@ body {
   
   h4 {
     text-align: center;
-    color: #ffffff;
+    color: white;
   }
   
   input,
@@ -77,19 +93,15 @@ body {
   }
   
   textarea {
-    min-height: 500px;
+    min-height: 100px;
     max-height: 200px;
     max-width: 100%;
   }
   
   #boton {
-    background: #0dbd25;
-    color: #ffffff;
-    padding: px;
-    cursor: pointer;
-    transition: box-shadow 500ms;
-    border-radius: 20px;
-
+    background: #31384A;
+    color: #fff;
+    padding: 5px;
   }
   
   #boton:hover {
@@ -101,22 +113,4 @@ body {
     form {
       width: 100%;
     }
-
-   }
-
-   .modal::backdrop{
-    background-color: #0dbd25;
-   }
-
-   table{
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
-    height: 180px;
-    color: #ffffff;
-    
-   }
-    
-  
-  
+  }

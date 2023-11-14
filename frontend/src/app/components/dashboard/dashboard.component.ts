@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Ticket } from 'src/app/interfaces/ticket';
 import { TicketService } from 'src/app/services/ticket.service';
+import { LoginComponent } from '../login/login.component';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -12,17 +14,20 @@ import { TicketService } from 'src/app/services/ticket.service';
 export class DashboardComponent implements OnInit {
   listTickets: Ticket[] = []
   loading: boolean = false;
-
-  constructor(private _ticketService: TicketService, private toastr: ToastrService) { }
-
+  userRole: string = '';
+  dato: any;
+  constructor(private _ticketService: TicketService, private toastr: ToastrService, private route: ActivatedRoute) { }
+  
   ngOnInit(): void {
-    this.getListtickest();
+    this.dato = this.route.snapshot.paramMap.get('idRole');
+    console.log(this.dato)
+    this.getListtickest(this.dato);
   }
 
-  getListtickest() {
+  getListtickest(id : number) {
     this.loading = true;
 
-    this._ticketService.getTicketstecnico().subscribe((data: Ticket[]) => {
+    this._ticketService.getTicketstecnico(id).subscribe((data: any) => {
       this.listTickets = data;
       this.loading = false;
     })
@@ -31,21 +36,16 @@ export class DashboardComponent implements OnInit {
   deleteTicket(id: number) {
     this.loading = true;
     this._ticketService.deleteTicket(id).subscribe(() => {
-      this.getListtickest();
+      this.getListtickest(id);
       this.toastr.warning('El ticket fue eliminado con exito', 'ticket eliminado');
     })
   }
-  updateTicket(id: number) {
-    this._ticketService.updateTicket(id).subscribe(() => {
-      this.getListtickest();
+  actualizarEstado(id: number) {
+    this.dato = this.route.snapshot.paramMap.get('idRole');
+    this._ticketService.actualizarEstado(id).subscribe(() => {
+      this.getListtickest(this.dato);
     });
   }
   mostrarBoton = true;
-
-  ocultarBoton() {
-    this.mostrarBoton = false;
-    this.getListtickest();
-    this.mostrarBoton = false;
-  }
 
 }

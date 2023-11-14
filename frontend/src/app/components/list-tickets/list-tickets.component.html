@@ -1,8 +1,9 @@
-<!-- <app-progress-bar *ngIf="loading"></app-progress-bar> -->
+<!-- <app-progress-bar *ngIf="loading"></app-progress-bar>-->
+<app-navbar></app-navbar>
 <div  class="container">
     <div class="title">
-        <h4>TICKEST</h4>
-        <button type="button" class="btn btn-primary" routerLink="/crearticket">Agregar Ticket</button>
+        <h4>TICKETS</h4>
+        <button type="button" class="btn btn-success" routerLink="/crearticket">Agregar Ticket</button>
     </div>
 
     <table *ngIf="listTickets.length > 0" class="table table-hover">
@@ -32,9 +33,9 @@
             <td>{{ item.userId }}</td>
             <td>{{ item.tecnicoId }}</td>
             <td>{{ item.type }}</td>
-            <td>{{ item.category }}</td>
+            <td>{{ item.category }}</td>   
             <td>
-                <button routerLink="/edit/{{ item.id}}" type="button" class="btn btn-info btn-sm">Actualizar</button>
+                <button routerLink="/editar/{{item.id!}}" type="button" class="btn btn-primary btn-sm ms-2">Actualizar</button>
                 <button (click)="deleteTicket(item.id!)" type="button" class="btn btn-secondary btn-sm ms-2">Delete</button>
             </td>
           </tr>

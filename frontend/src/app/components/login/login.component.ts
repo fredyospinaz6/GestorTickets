@@ -53,9 +53,10 @@ export class LoginComponent implements OnInit {
         this.userRole = data;
         console.log(this.userRole);
         if (this.userRole[0] == 'tecnico'){
-          this.router.navigate([`/dashboard/${this.userRole[1]}`])
+          const idRole = this.userRole[1];
+          this.router.navigate(['/dashboard/',idRole])
         }else if (this.userRole == 'user'){
-          this.router.navigate(['/crearticket'])
+          this.router.navigate(['/crearticketuser'])
         }
         
       });

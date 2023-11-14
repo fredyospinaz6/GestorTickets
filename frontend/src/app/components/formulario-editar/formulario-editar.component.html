@@ -1,0 +1,44 @@
+<div *ngIf="!loading" class="row mt-1">
+  <div class="col-lg-4 offset-lg-4">
+    <br>
+      <div class="card text-white bg-secondary mb-3" style="max-width: 40rem;">
+          <div class="card-header text-center">{{ operacion }} Ticket</div>
+          <div class="card-body">
+              <form [formGroup]="form" (ngSubmit)="addTicket()">
+                  <input formControlName="type" type="text" class="form-control" placeholder="Ingrese nombre">
+                  <span *ngIf="form.get('type')?.hasError('required') && form.get('type')?.touched">
+                      El campo nombre es <strong>requerido</strong>
+                  </span>
+                  <input formControlName="priority" type="text" class="form-control mt-2" placeholder="Ingrese descripcion">
+                  <span *ngIf="form.get('priority')?.hasError('required') && form.get('priority')?.touched">
+                      El campo descripcion es <strong>requerido</strong>
+                  </span>
+                  <input formControlName="category" type="text" class="form-control mt-2" placeholder="Ingrese precio">
+                  <span *ngIf="form.get('category')?.hasError('required') && form.get('category')?.touched">
+                      El campo price es <strong>requerido</strong>
+                  </span>
+                  <input formControlName="title" type="text" class="form-control mt-2" placeholder="Ingrese stock">
+                  <span *ngIf="form.get('title')?.hasError('required') && form.get('title')?.touched">
+                      El campo stock es <strong>requerido</strong>
+                  </span>
+                  <input formControlName="description" type="text" class="form-control mt-2" placeholder="Ingrese stock">
+                  <span *ngIf="form.get('description')?.hasError('required') && form.get('description')?.touched">
+                      El campo stock es <strong>requerido</strong>
+                  </span>
+                  <span>
+                    <select  name="tecnicoId" id="tecnicoId"></select>
+                  </span>
+                  <div class="row mt-2 text-center">
+                      <div class="col-lg-6">
+                          <button routerLink="/" type="button" class="btn btn-secondary">Volver</button>
+                      </div>
+                      <div class="col-lg-6">
+                          <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Aceptar</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+

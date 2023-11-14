@@ -1,7 +1,7 @@
 .contenedor-login{
-    background-color: rgb(249, 249, 250);
+    background: rgba(222, 222, 222, 0.5);
     box-sizing: border-box;
-    border-radius: 5%;
+    border-radius: 8%;
     padding: 60px 40px;
 }
 .fila{
@@ -11,4 +11,9 @@
     flex: 1;
     
 }
-
+.body {
+    background: rgba(0, 0, 0, 0);  
+}
+.fondo-login{
+    background: rgba(0, 0, 0, 0);
+}

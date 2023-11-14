@@ -1,27 +1,45 @@
 
 <body>
+    <app-sidebar></app-sidebar>
     <app-navbar></app-navbar> 
-    <form action="index.html">
-        <h2>Menu</h2>
-        <div class="logo">
-          <img src="../../../assets/img/lupa.png"> 
-          <button type="button" routerLink="/consultar-ticket" id="boton">Consultar Tickets </button><br>
-        
-            <img src="../../../assets/img/registro2.png"> 
-            <button type="button" routerLink="/signIn" id="boton">Registrar Nuevo Usuario</button><br>
-
-            <img src="../../../assets/img/soporte-tecnico.png"> 
-            <button routerLink="/crearticket" type="button" id="boton" >Registrar Ticket</button><br>
-       
-            <img src="../../../assets/img/asignar.png" > 
-            <button routerLink="/crearticket" type="button" id="boton" >Asignar Ticket</button><br>
-            <br>
+    <div class="fila">
+            <div class="logo">
+                <form action="index.html">
+                    <h2> Consulta <br>
+                    <img src="../../../assets/img/lupa.png" id="logodiv"> </h2>
+                    <button type="button" routerLink="/consultar-ticket" id="boton">Consultar Tickets </button>
+                </form>
+            </div>
+            <div class="logo">
+                <form action="index.html">
+                        <h2> Usuarios <br>
+                            <img src="../../../assets/img/registro2.png"> 
+                        </h2>
+                        <button type="button" routerLink="/signIn" id="boton">Registrar Nuevo Usuario</button>
+                </form>
+            </div>
+            <div class="logo">
+                <form action="index.html">
+                    <h2>Tickets <br>
+                    <img src="../../../assets/img/asignar.png"> </h2>
+                    <button routerLink="/crearticket" type="button" id="boton" >Registrar Ticket</button> 
+                </form>
+            </div>
+            <div class="logo">
+                <form action="index.html">
+                    <h2>Reportes <br>
+                    <img src="../../../assets/img/lupa2.png" > </h2>
+                    <!-- <button routerLink="/crearticket" type="button" id="boton" >Asignar Ticket</button> -->
+                    <button id="boton" (click)="generateTextReport()">
+                        Generar Reporte TXT
+                      </button>
+                      
+                </form>
+            </div>
             <button routerLink="/login-admin" type="button" id="botonSalir" style="background-color: blue;"> SALIR </button>
-           
-        </div>
-     
-    </form>
-
+       
+ 
+    </div>
     <div id="popup" class="popup" #popup>
         <!-- Contenido de la ventana emergente -->
     </div>
